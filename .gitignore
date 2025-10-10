@@ -1,13 +1,24 @@
-# General for Python
+# Virtual environment
+flask-server_env/
+venv/
+env/
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.so
+.Python
+
+# Log files
+*.log
+keyboard_capture.txt
+
+# OS
 .DS_Store
+Thumbs.db
 
-# IDE settings
-.idea/
+# IDE
 .vscode/
-
-# Virtual environments
-venv/
-.venv/
-.env/
+.idea/
